@@ -1,7 +1,5 @@
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      인덱스 페이지
-    </div>
+    <div className="w-full sm:max-w-[460px] min-h-real-screen mx-auto p-6 bg-white rounded-xl shadow-lg flex flex-col justify-center items-center relative overflow-hidden"></div>
   );
 }
