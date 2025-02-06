@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import ScreenHeightSetter from "./components/ScreenHeightSetter";
+import ScreenHeightSetter from "../components/ScreenHeightSetter";
+import Background from "@/components/background";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -29,7 +30,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <ScreenHeightSetter />
-        {children}
+        <Background>{children}</Background>
       </body>
     </html>
   );

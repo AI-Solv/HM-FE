@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
-import setScreenHeight from "../utils/mobileScreenSize/setScreenHeight";
+import setScreenHeight from "@/utils/mobileScreenSize/setScreenHeight";
 
 export default function ScreenHeightSetter() {
   useEffect(() => {
