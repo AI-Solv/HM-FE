@@ -9,7 +9,7 @@ interface InputProps {
     e: React.ChangeEvent<HTMLInputElement>
   ) => void;
   errorMessage?: string;
-  successMessage?: string;
+  rightComponent?: React.ReactNode;
 }
 
 export default function Input({
@@ -19,7 +19,7 @@ export default function Input({
   value,
   onChange,
   errorMessage,
-  successMessage,
+  rightComponent,
 }: InputProps) {
   return (
     <div className="w-full mt-3">
@@ -28,27 +28,24 @@ export default function Input({
           {label}
         </label>
       )}
-      <input
-        type={type}
-        placeholder={placeholder}
-        value={value}
-        onChange={onChange}
-        className={`w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 ${
-          errorMessage
-            ? "border-red-500 focus:ring-2 focus:ring-red-500"
-            : ""
-        }
-          ${
-            successMessage
-              ? "border-green-500 focus:ring-2 focus:ring-green-500"
-              : "border-gray-300"
-          }`}
-      />
-      {successMessage && (
-        <p className="text-green-500 text-sm mt-1">
-          {successMessage}
-        </p>
-      )}
+      <div className="relative">
+        <input
+          type={type}
+          placeholder={placeholder}
+          value={value}
+          onChange={onChange}
+          className={`w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 ${
+            errorMessage
+              ? "border-red-500 focus:ring-2 focus:ring-red-500"
+              : ""
+          }}`}
+        />
+        {rightComponent && (
+          <div className="absolute right-3 top-1/2 transform -translate-y-1/2">
+            {rightComponent}
+          </div>
+        )}
+      </div>
       {errorMessage && (
         <p className="text-red-500 text-sm mt-1">
           {errorMessage}

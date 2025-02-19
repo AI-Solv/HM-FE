@@ -5,7 +5,7 @@ export default function AuthLinks() {
   return (
     <div className="flex justify-center text-gray-500 text-sm font-medium gap-2">
       <Link
-        href="/find-password"
+        href="/findPassword"
         className="text-[#767676] text-sm font-normal font-['Pretendard'] leading-tight"
       >
         비밀번호 찾기

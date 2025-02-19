@@ -6,7 +6,7 @@ export default function LoginForm() {
   const { email, password, setEmail, setPassword } =
     useUserStore();
   return (
-    <div className="w-full">
+    <div className="w-full mb-4">
       <Input
         type="email"
         placeholder="아이디(이메일) 입력"
@@ -23,7 +23,6 @@ export default function LoginForm() {
         label="로그인"
         onClick={() => console.log("로그인 클릭!")}
       />
-      <div className="mb-6"></div>
     </div>
   );
 }

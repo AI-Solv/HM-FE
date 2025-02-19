@@ -1,88 +1,81 @@
 "use client";
 
-import AuthTitle from "@/containers/login/AuthTitle";
-import InputField from "@/components/inputField/Input";
-
+import SignupTitle from "@/containers/signup/SignupTitle";
+import ProgressBar from "@/components/ProgressBar";
+import SignupForm from "@/containers/signup/SignupForm";
+import Button from "@/components/button/Button";
+import { useSignupStore } from "@/store/useSignupStore";
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 
 export default function Page() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [confirmPassword, setConfirmPassword] =
-    useState("");
+  const [currentStep, setCurrentStep] = useState(1);
+  const router = useRouter();
+  const totalSteps = 3;
+  const {
+    email,
+    password,
+    confirmPassword,
+    nickname,
+    emailError,
+    passwordError,
+    confirmPasswordError,
+    isChecked14,
+    isCheckedTerms,
+    isCheckedInformation,
+  } = useSignupStore();
 
-  const [emailError, setEmailError] = useState("");
-  const [passwordError, setPasswordError] = useState("");
-  const [confirmPasswordError, setConfirmPasswordError] =
-    useState("");
+  const isStep1Valid =
+    email &&
+    password &&
+    confirmPassword &&
+    !emailError &&
+    !passwordError &&
+    !confirmPasswordError;
+  const isStep2Valid =
+    isChecked14 && isCheckedTerms && isCheckedInformation;
+  const isStep3Valid = nickname.length >= 2;
 
-  const [emailSuccess, setEmailSuccess] = useState("");
+  const isFormValid =
+    (currentStep === 1 && isStep1Valid) ||
+    (currentStep === 2 && isStep2Valid) ||
+    (currentStep === 3 && isStep3Valid);
 
-  const handleEmailChange = (
-    e: React.ChangeEvent<HTMLInputElement>
-  ) => {
-    setEmail(e.target.value);
-    setEmailError("");
-  };
-
-  const handlePasswordChange = (
-    e: React.ChangeEvent<HTMLInputElement>
-  ) => {
-    setPassword(e.target.value);
-    if (!/[0-9]/.test(e.target.value)) {
-      setPasswordError("숫자가 포함되지 않았습니다.");
-    } else {
-      setPasswordError("");
+  const handleNextStep = () => {
+    if (currentStep < totalSteps) {
+      setCurrentStep(currentStep + 1);
     }
   };
 
-  const handleConfirmPasswordChange = (
-    e: React.ChangeEvent<HTMLInputElement>
-  ) => {
-    setConfirmPassword(e.target.value);
-    if (e.target.value !== password) {
-      setConfirmPasswordError(
-        "비밀번호가 일치하지 않습니다."
-      );
-    } else {
-      setConfirmPasswordError("");
-    }
+  const handleSubmit = () => {
+    console.log("회원가입 완료");
+    setCurrentStep(currentStep + 1);
+    router.push("/login");
   };
 
   return (
-    <div>
-      <div className="min-h-[80px]"></div>
-      <AuthTitle title="이메일로 가입하기" />
-
-      <div className="max-w-md mx-auto space-y-6">
-        <InputField
-          label="아이디(이메일)"
-          type="email"
-          placeholder="이메일을 입력하세요"
-          value={email}
-          onChange={handleEmailChange}
-          errorMessage={emailError}
-          successMessage={emailSuccess}
+    <div className="flex min-h-screen flex-col justify-between">
+      <div>
+        <div className="w-[115px] h-[18px] text-[#7168b4] text-base font-bold font-['Pretendard'] mt-6 mb-4">
+          회원가입
+        </div>
+        <SignupTitle currentStep={currentStep} />
+        <ProgressBar
+          currentStep={currentStep}
+          totalSteps={4}
         />
-
-        <InputField
-          label="비밀번호"
-          type="password"
-          placeholder="영문, 숫자, 특수 문자를 사용한 8~20자"
-          value={password}
-          onChange={handlePasswordChange}
-          errorMessage={passwordError}
-        />
-
-        <InputField
-          label="비밀번호 확인"
-          type="password"
-          placeholder="위의 비밀번호를 다시 입력해 주세요."
-          value={confirmPassword}
-          onChange={handleConfirmPasswordChange}
-          errorMessage={confirmPasswordError}
-        />
+        <SignupForm currentStep={currentStep} />
       </div>
+
+      <Button
+        label={currentStep === totalSteps ? "완료" : "다음"}
+        onClick={
+          currentStep === totalSteps
+            ? handleSubmit
+            : handleNextStep
+        }
+        disabled={!isFormValid}
+      />
     </div>
   );
 }

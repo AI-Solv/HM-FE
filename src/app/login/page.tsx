@@ -3,7 +3,6 @@
 import Header from "@/components/Header";
 import AuthDivider from "@/containers/login/AuthDivider";
 import AuthLinks from "@/containers/login/AuthLinks";
-import AuthTitle from "@/containers/login/AuthTitle";
 import LoginForm from "@/containers/login/LoginForm";
 import SNSLogin from "@/containers/login/SNSLogin";
 
