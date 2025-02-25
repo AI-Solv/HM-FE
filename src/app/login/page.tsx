@@ -9,8 +9,8 @@ import SNSLogin from "@/containers/login/SNSLogin";
 export default function Page() {
   return (
     <div className="w-full">
-      <Header />
-      <div className="min-h-[80px]"></div>
+      <Header buttonSrc="/icons/Back_Button.png" />
+      <div className="min-h-[60px]"></div>
       <h1 className="text-[#222222] text-2xl font-bold font-['Pretendard'] mb-3">
         할까말까에 오신걸 환영합니다!
       </h1>

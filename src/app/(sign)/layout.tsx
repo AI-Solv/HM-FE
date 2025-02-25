@@ -8,7 +8,7 @@ export default function Layout({
 }) {
   return (
     <div className="w-full">
-      <Header />
+      <Header buttonSrc="/icons/Back_Button.png" />
       {children}
     </div>
   );
