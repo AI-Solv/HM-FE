@@ -34,7 +34,7 @@ export default function ReviewForm({
   };
 
   return (
-    <div className="mt-4">
+    <div className="mt-6 mb-4">
       <div className="w-[314px] text-[#424242] text-lg font-medium font-['Pretendard'] leading-tight mb-2">
         {title}
       </div>
