@@ -9,7 +9,7 @@ export default async function complete({
   const { id } = await params;
 
   return (
-    <div className="w-full">
+    <div className="w-full p-6">
       <Header buttonSrc="/icons/Back_Button.png" />
       <CompleteForm id={id} />
     </div>

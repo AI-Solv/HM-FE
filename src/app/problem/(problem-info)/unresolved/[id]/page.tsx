@@ -57,7 +57,7 @@ export default function Page({
   };
 
   return (
-    <div className="relative">
+    <div className="w-full">
       <Header
         buttonSrc="/icons/Close_Button.png"
         rightComponent={

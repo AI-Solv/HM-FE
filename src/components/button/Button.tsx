@@ -20,7 +20,7 @@ export default function Button({
       className={`${
         size === "small"
           ? "w-auto h-[40px] px-4 py-2"
-          : "w-full h-[54px] px-4 py-[15px] mt-12"
+          : "absolute bottom-4 w-[calc(100%-3rem)] h-[54px] px-4 py-[15px]"
       } rounded-[10px] flex justify-center items-center gap-2
       ${
         disabled

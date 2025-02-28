@@ -8,7 +8,7 @@ import SNSLogin from "@/containers/login/SNSLogin";
 
 export default function Page() {
   return (
-    <div className="w-full">
+    <div className="w-full p-6">
       <Header buttonSrc="/icons/Back_Button.png" />
       <div className="min-h-[60px]"></div>
       <h1 className="text-[#222222] text-2xl font-bold font-['Pretendard'] mb-3">

@@ -66,7 +66,6 @@ export default function Page() {
         />
         <SignupForm currentStep={currentStep} />
       </div>
-
       <Button
         label={currentStep === totalSteps ? "완료" : "다음"}
         onClick={
