@@ -26,7 +26,7 @@ export default function Textarea({
         placeholder={placeholder}
         value={value}
         onChange={onChange}
-        className="w-full px-[9px] pt-4 pb-[15px] text-black font-normal rounded-[10px] border border-[#d3d3d3] justify-center items-start gap-2 inline-flex text-[#898989] font-medium font-['Pretendard'] leading-tight"
+        className="w-full px-[9px] pt-4 pb-[15px] text-black font-normal rounded-[10px] border border-[#d3d3d3] focus:outline-none focus:ring-1 focus:ring-[#B1A8E6] justify-center items-start gap-2 inline-flex text-[#898989] font-medium font-['Pretendard'] leading-tight"
         style={{
           height: "270px",
           resize: "none",

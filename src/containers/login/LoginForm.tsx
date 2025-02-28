@@ -1,5 +1,4 @@
 import Input from "@/components/inputField/Input";
-import Button from "@/components/button/Button";
 import { useUserStore } from "@/store/useUserStore";
 
 export default function LoginForm() {
@@ -20,7 +19,7 @@ export default function LoginForm() {
         onChange={(e) => setPassword(e.target.value)}
       />
       <button
-        className="w-full h-[54px] rounded-[10px] flex justify-center items-center bg-[#6b60be] text-white hover:bg-[#5a51b3] mt-10"
+        className="w-full h-[54px] rounded-[10px] flex justify-center items-center bg-[#6b60be] text-white hover:bg-[#5a51b3] mt-8"
         onClick={() => console.log("로그인 완료")}
       >
         로그인

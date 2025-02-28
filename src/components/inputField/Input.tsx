@@ -34,9 +34,9 @@ export default function Input({
           placeholder={placeholder}
           value={value}
           onChange={onChange}
-          className={`w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 ${
+          className={`w-full p-3 border rounded-lg focus:outline-none focus:ring-1 focus:ring-[#B1A8E6] ${
             errorMessage
-              ? "border-red-500 focus:ring-2 focus:ring-red-500"
+              ? "border-red-500 focus:ring-1 focus:ring-red-500"
               : ""
           }}`}
         />

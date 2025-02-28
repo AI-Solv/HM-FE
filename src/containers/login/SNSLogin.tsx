@@ -3,7 +3,7 @@ import SNSLoginButton from "@/components/button/SNSLoginButton";
 export default function SNSLogin() {
   return (
     <div>
-      <div className="w-full flex justify-center items-center mt-12 mb-6">
+      <div className="w-full flex justify-center items-center mt-20 mb-6">
         <div className="flex-grow h-px bg-gray-300"></div>
         <span className="text-[#bdbdbd] text-sm font-medium font-['Pretendard'] leading-tight">
           SNS 계정으로 로그인
