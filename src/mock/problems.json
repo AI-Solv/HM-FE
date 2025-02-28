@@ -12,11 +12,11 @@
   },
   {
     "id": 2,
-    "title": "휴가 날짜 고민",
-    "description": "휴가 날짜를 언제로 정해야 할지 고민입니다.",
+    "title": "취업 고민",
+    "description": "내 스펙과 원하는 병원의 요구스펙이 너무 달라 고민입니다.",
     "status": "unresolved",
     "type": "manual",
-    "category": "학업",
+    "category": "인생/미래",
     "deadline": "2024-01-01",
     "created_at": "2023-12-01T10:00:00Z",
     "resolution": "고민을 해결한 내용 또는 AI가 제시한 답변"

@@ -80,7 +80,7 @@ export default function ProblemDetails({
             borderRadius: "10px",
             border: "1.8px solid #6b60be",
           }}
-          className="w-80 h-[229px] rounded-[10px] p-6"
+          className="w-full h-[229px] rounded-[10px] p-6"
         >
           <p>{text}</p>
         </div>
